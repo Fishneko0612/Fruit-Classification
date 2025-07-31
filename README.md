@@ -41,4 +41,4 @@ This re-trained ResNet-18 model was created on Jetson Nano and trained on a data
    <img width="232" height="180" alt="image" src="https://github.com/user-attachments/assets/60011bdc-daa2-40fb-830e-3db91163e804" />
 
 ## Video
-[View a video explanation here](video link)
+[View a video explanation here][https://youtu.be/6s-MhXnCxoc
