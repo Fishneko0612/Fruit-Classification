@@ -9,9 +9,12 @@ This re-trained ResNet-18 model was created on Jetson Nano and trained on a data
 
 ## Running this project
 1. Make sure that both the Jetson Inference library and Python3 are installed on your Jetson Nano.
+
 2. Download fruit-data folder, fruit-model folder and fruit-result image.
+
 3. Open the terminal and unzip files(if needed).
 <img width="440" height="167" alt="image" src="https://github.com/user-attachments/assets/519835e4-2956-4715-ad89-0b11fa649880" />
+
 
 4. Use "cd <your folder paths>" to locate the downloaded folders. For example, I downloaded it to the "classification" folder.
 ```
@@ -19,17 +22,27 @@ This re-trained ResNet-18 model was created on Jetson Nano and trained on a data
 ```
 <img width="921" height="94" alt="image" src="https://github.com/user-attachments/assets/90b6d9f3-8173-4f9f-944b-235ce788318d" />
 
-5. Since I already trained the model and placed it in the "model" folder, you don't need to train it again. 
-6. Set the net and data variables as shown below:
+
+5. Since I already trained the model and placed it in the "model" folder, you don't need to train it again.
+
+6. (If you want to re-train your model, type "cd ~/jetson-inference", and then type "./docker/run.sh".  Enter your password when prompted.  Next, change directories by typing "cd python/training/classification")
+
+<img width="1414" height="357" alt="image" src="https://github.com/user-attachments/assets/8c0791ec-df50-48e4-9524-6506535021f9" />
+
+(You can use Ctrl+C to stop it at any time.)
+
+7. Set the net and data variables as shown below:
 ```
    NET=fruit-model
    DATASET=fruit-data
 ```
-7. Run this command to test an image:
+
+8. Run this command to test an image:
 ```
  imagenet.py --model=$NET/fruit/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/classname.txt $DATASET/test/1/3.jpg fruit-result.jpg
 ```
-8. Locate the "fruit-result" image and click on it, then you can view the type of fruit and the accuracy.
+
+9. Locate the "fruit-result" image and click on it, then you can view the type of fruit and the accuracy.
    
    <img width="232" height="180" alt="image" src="https://github.com/user-attachments/assets/60011bdc-daa2-40fb-830e-3db91163e804" />
 
